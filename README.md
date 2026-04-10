@@ -48,7 +48,7 @@
 | Text-to-image synthesis | Generate images from text prompts | DALL·E, Stable Diffusion |
 
 
-![Generated Faces](images/im3.png)
+![Generated Faces](images/im1.jpg)
 ---
 
 ## Why Use Generative AI?
@@ -97,7 +97,7 @@ Over time:
 
 ### GAN Architecture
  
-![Generated Faces](images/im2.jpg)
+![GAN Architecture](images/im2.jpg)
 
 The architecture of a GAN is structured around the flow of data between the Generator and the Discriminator, forming a closed training loop. The process begins with a random noise vector sampled from a predefined distribution, which is then passed through the Generator to produce a synthetic image. This generated image, along with real images sampled from the training dataset, is fed into the Discriminator, which outputs a probability indicating whether each image is real or fake. The Generator and Discriminator are typically implemented as deep neural networks, often using convolutional layers for image data, and their interaction defines the overall behavior of the system. This architecture enables the model to iteratively refine its outputs through feedback from the Discriminator.
 
