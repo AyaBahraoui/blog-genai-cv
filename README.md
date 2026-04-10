@@ -42,6 +42,8 @@ A key innovation in diffusion models is their ability to incorporate external gu
 
 For example, when given a prompt like *"an astronaut cat floating in space"*, the model uses this information at every step to guide the image toward a result that matches the description. This enables a high level of creative control and flexibility.
 
+![Diffusion](images/dif-1.png)
+
 ### Strengths and Limitations
 
 Diffusion models are known for producing highly realistic and detailed images, with accurate textures and lighting. They are also more stable than GANs and capable of generating a wide variety of outputs.
