@@ -24,7 +24,7 @@
 
 ## What is Generative AI?
 
-**Generative AI (GenAI)** in Computer Vision refers to models capable of **generating new images**, rather than only analyzing or classifying existing ones. These models learn the underlying statistical structure of visual data and use it to synthesize novel, realistic content.
+**Generative AI (GenAI)** in Computer Vision refers to a class of models capable of generating new visual data rather than simply analyzing or classifying existing images. Unlike traditional discriminative approaches that focus on **recognizing patterns**, generative models aim to learn the underlying probability distribution of the data and use it to synthesize new, realistic samples. This process can be intuitively understood through the analogy of an art student who studies thousands of paintings, internalizes their structures and styles, and eventually produces original artworks. In the same way, generative models learn from large datasets and create images that did not previously exist, marking a shift from passive perception to active content creation in computer vision.
 
 > **Analogy — The Art Student**
 > 
@@ -48,13 +48,12 @@
 | Text-to-image synthesis | Generate images from text prompts | DALL·E, Stable Diffusion |
 
 > **[Image 1 — Required]**  
-> Search: `AI generated faces grid GAN StyleGAN`  
-> Add here a grid of AI-generated faces (e.g. from thispersondoesnotexist.com)  
-> _Purpose: demonstrate immediately the visual power of GenAI_
-
+![Generated Faces](images/im1.png)
 ---
 
 ## Why Use Generative AI?
+
+The adoption of Generative AI is driven by its ability to address key limitations in traditional computer vision systems while enabling new capabilities. One of its primary uses is data augmentation, where synthetic data is generated to compensate for limited or imbalanced datasets, particularly in domains such as medical imaging where data collection is costly or constrained. It also plays a crucial role in content creation, automating the generation of visual assets for industries such as gaming, film, and digital art, thereby reducing production time and costs. Furthermore, generative models are widely used in simulation environments, allowing systems like autonomous vehicles and robots to be trained in safe, controlled, and diverse virtual settings. In research and security, they contribute to testing model robustness and exploring adversarial scenarios, making them valuable tools for innovation and system validation.
 
 ### 1. Data Augmentation
 Generating synthetic labeled data to supplement limited or expensive real datasets. Particularly useful in medical imaging, where annotated data is scarce.
@@ -72,18 +71,10 @@ Applied in healthcare (generating MRI/CT scans), security (adversarial robustnes
 
 ## Generative Adversarial Networks (GANs)
 
-GANs (Goodfellow et al., 2014) are the foundational architecture for image generation. Their core innovation is the **adversarial training framework**: two networks compete, and competition drives quality.
-
+Generative Adversarial Networks (GANs), introduced by **Ian Goodfellow** in 2014, represent one of the most influential architectures in generative modeling due to their unique adversarial training framework. A GAN consists of two neural networks—a Generator and a Discriminator—that are trained simultaneously in a competitive setting. The Generator learns to produce synthetic images from random noise, while the Discriminator evaluates whether a given image is real or generated. This adversarial interaction creates a dynamic learning process in which both networks continuously improve, leading to increasingly realistic outputs. GANs have become a foundational approach in image generation tasks and have significantly advanced the field of Generative AI.
 ### Core Concept
 
-A GAN is composed of **two competing neural networks** trained simultaneously:
-
-| Network | Symbol | Role |
-|---|---|---|
-| **Generator** | G | Creates fake images from random noise |
-| **Discriminator** | D | Classifies images as real or fake |
-
-> These two networks are trained **jointly** in a competitive (adversarial) process.
+At the core of GANs lies the interaction between two competing components with opposing objectives. The Generator is responsible for mapping random noise vectors to synthetic images, effectively learning how to mimic the distribution of real data, while the Discriminator acts as a binary classifier that attempts to distinguish between real and generated images. These two networks are trained jointly, with the Generator trying to fool the Discriminator and the Discriminator striving to correctly identify fake samples. This competitive process forms the basis of adversarial learning and is what enables GANs to produce highly realistic data over time.
 
 ---
 
@@ -107,9 +98,7 @@ Over time:
 ### GAN Architecture
 
 > **[Image 2 — Critical]**  
-> Search: `GAN architecture diagram generator discriminator`  
-> Must show: Generator → Fake Image → Discriminator ← Real Images → Real/Fake prediction  
-> _This diagram is essential to understanding the training loop_
+![Generated Faces](images/im2.png)
 
 **Workflow diagram:**
 
@@ -139,11 +128,6 @@ Random Noise (z) ──→ [ Generator G ] ──→ Fake Image G(z) ──→ �
 
 ### Training Workflow
 
-> **[Image 3 — Strongly Recommended]**  
-> Search: `GAN training progression images epochs`  
-> Shows: blurry/noisy images at epoch 1 → sharp, realistic images at convergence  
-> _Demonstrates that you understand the iterative learning process_
-
 **Step-by-step training loop:**
 
 1. **Sample noise** — Draw a random latent vector $z \sim p_z(z)$ (e.g., Gaussian distribution)
@@ -154,8 +138,7 @@ Random Noise (z) ──→ [ Generator G ] ──→ Fake Image G(z) ──→ �
 6. **Repeat** — Iterate until D outputs ~0.5 for all inputs (Nash equilibrium: D can no longer distinguish real from fake)
 
 > **[Image 4 — Optional but Impactful]**  
-> Search: `deepfake example before after`  
-> _Connects theory to real-world applications and raises ethical awareness_
+![Generated Faces](images/im3.png)
 
 ---
 
