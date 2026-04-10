@@ -10,7 +10,7 @@ A helpful way to understand this process is to imagine storing objects inside a 
 
 ---
 
-![VAE](images/Shema-VAE.png)
+![VAE](images/VAE-layers.png)
 
 ### Latent Representation and Reconstruction
 
