@@ -2,11 +2,11 @@
 
 ## Variational Autoencoders (VAE)
 
-Variational Autoencoders (VAEs) are generative models designed to learn compact and meaningful representations of images. Rather than memorizing data, they capture the underlying structure of images, allowing them to generate new samples that resemble the original dataset.
+Variational autoencoders are generative models aimed at learning small but meaningful representations of the images. They do not just learn by heart but find patterns in the data, making it possible for the model to produce new images that look like the original dataset.
 
-A VAE is composed of two main components: an encoder and a decoder. The encoder compresses an input image into a simplified representation called a *latent space*, while the decoder reconstructs an image from this representation.
+The variational autoencoder model consists of two parts: encoder and decoder. The first one represents an algorithm that reduces the original image to its simple form, known as a latent space. The decoder then uses this representation to recreate the picture.
 
-A helpful way to understand this process is to imagine storing objects inside a box. The encoder places the object into the box in a compact form, and the decoder retrieves and rebuilds it. However, the system does not store exact copies—it learns patterns. This enables the model to generate entirely new images by sampling from the latent space.
+A good analogy to this operation would be putting some items in a box. First, you pack all the items in the box in an easily stored manner. Next, you unpack them and use the stored information to create the image. The model does not store images as such but finds patterns that help it produce a completely new image.
 
 ---
 
@@ -14,49 +14,50 @@ A helpful way to understand this process is to imagine storing objects inside a 
 
 ### Latent Representation and Reconstruction
 
-The encoder transforms each image into a small vector—a kind of abstract fingerprint. Unlike standard autoencoders, the VAE introduces controlled randomness by representing each input as a distribution rather than a single point. This makes the latent space smooth and continuous.
+The encoder encodes every image into a short vector, which can be seen as an abstract fingerprint. The VAE differs from a regular autoencoder in the sense that it adds some randomness to the process by considering every image not as one fixed point but as a whole distribution.
 
-As a result, it becomes possible to move gradually between different points in this space and obtain meaningful intermediate images. This property is particularly useful for generating variations and exploring the structure of the data.
+Due to this approach, the latent space will have a continuous nature, allowing one to make a transition from one point in it to another and get an intermediate image.
 
 ### Strengths and Limitations
 
-One of the main advantages of VAEs is their stability during training. They also provide a well-structured latent space that allows for controlled manipulation of image attributes such as lighting, pose, or expression.
+One of the key strengths of variational autoencoders (VAEs) is that they are very stable in training. Another important feature is that they generate a well-organized latent space in which attributes of images such as lightening, posture, or expression can be manipulated easily.
 
-However, this structured learning comes with a trade-off. Since VAEs optimize for average reconstruction accuracy, the generated images often appear slightly blurry and lack fine details compared to other generative models.
+The drawback of the organized learning in VAEs is that they generally produce blurry images due to their optimization towards average reconstruction quality.
 
 ---
 
 ## Diffusion Models
 
-Diffusion models represent one of the most advanced approaches in modern image generation. They are widely used in systems such as Stable Diffusion and other text-to-image models.
+The diffusion approach constitutes one of the most sophisticated techniques utilized in the field of current image generation. It is employed in various systems like Stable Diffusion or other text-to-image generators.
 
-Their core idea is based on a gradual transformation between structure and noise. During training, noise is progressively added to an image until it becomes completely random. The model then learns how to reverse this process by removing noise step by step.
+At its essence, this model relies on the principle of a continuous transition from structure to noise. Specifically, noise is incrementally added to an image until the latter becomes totally randomized. This process is then reversed through learning how to undo the previous addition of noise.
 
-This process can be compared to revealing an image hidden under layers of dust. Instead of creating an image directly, the model starts from pure noise and progressively refines it until a coherent structure emerges.
+It can thus be seen that the mechanism works analogically to revealing an image covered with dust. In contrast to conventional techniques where the aim is to create an image, the diffusion approach works in the opposite way.
 
 ![Diffusion](images/diffusion-model.png)
 
 ### Guided Generation
 
-A key innovation in diffusion models is their ability to incorporate external guidance, such as text prompts. During the denoising process, the model does not remove noise randomly—it follows a direction influenced by the input description.
+One of the main advancements in diffusion models is their capacity to include outside influence through means like prompting with text. In removing the noise, the diffusion process doesn't do so blindly but rather in a certain direction based on the prompt input.
 
-For example, when given a prompt like *"an astronaut cat floating in space"*, the model uses this information at every step to guide the image toward a result that matches the description. This enables a high level of creative control and flexibility.
+For instance, if we prompt the model with *”an astronaut cat floating in space”,* the model uses this information throughout its iterations to produce an image matching the prompt.
 
 ![Diffusion](images/dif-1.png)
 
 ### Strengths and Limitations
 
-Diffusion models are known for producing highly realistic and detailed images, with accurate textures and lighting. They are also more stable than GANs and capable of generating a wide variety of outputs.
+One of the advantages of diffusion models is that they can create high-quality images with very realistic textures and lighting. Moreover, diffusion models are quite stable compared to GANs and can generate many types of output.
 
-However, these benefits come at a cost. The generation process is computationally expensive and relatively slow, as it requires many iterative steps to produce a single image. Optimizing this process remains an active area of research.
+Nevertheless, the disadvantages of this approach include the fact that it is quite computationally intensive. The process of creating an image takes a lot of time as a large number of iterations is needed to produce even one picture.
 
 ---
 
 ## Model Comparison: GAN vs VAE vs Diffusion
 
-Generative models differ mainly in the way they approach image creation.
+The main difference among generative models lies in their methodology for image generation.
 
-GANs rely on a competitive process between two networks, often producing very sharp and realistic images but suffering from unstable training. VAEs focus on structured representation and reconstruction, offering stability and interpretability at the expense of visual sharpness. Diffusion models generate images by progressively removing noise, achieving state-of-the-art quality while requiring significant computational resources.
+GANs employ a process where the two networks compete against each other, resulting in high-resolution images that look real, albeit with training instability. VAEs concentrate on structured representation and image reconstruction, providing stability and interpretability while compromising on image resolution. Diffusion models involve the gradual elimination of noise to create images, ensuring top-notch resolution but demanding substantial computing power.
+
 
 | Model      | Core Idea                          | Advantages                          | Limitations                         |
 |-----------|-----------------------------------|-------------------------------------|-------------------------------------|
@@ -66,10 +67,8 @@ GANs rely on a competitive process between two networks, often producing very sh
 
 ## Conclusion
 
-Generative AI in computer vision has evolved significantly, offering multiple approaches to create realistic images. Each model follows a different philosophy.
+There have been many developments in the field of generative AI applied in computer vision with numerous techniques that generate realistic images. Each technique operates based on its own unique philosophy.
 
-VAEs focus on learning structured and continuous representations, making them reliable and easy to train, but they often lack visual sharpness. GANs introduce a competitive dynamic that can produce highly realistic images, although training them can be unstable. Diffusion models take a completely different path by generating images from noise, achieving impressive visual quality at the cost of computational efficiency.
+The Variational Autoencoder (VAE) architecture is concerned with creating continuous and structured representations, resulting in reliable and easily trainable models. However, it struggles in producing realistic images. Generative Adversarial Networks (GANs) incorporate a competition-based approach to generate realistic images but may require extensive training due to instability. Diffusion models are unique, as they operate by creating images from noise, and are known to generate extremely realistic images. 
 
-Overall, these models highlight how different strategies can lead to similar goals: generating meaningful visual content. Among them, diffusion models currently stand out as the most powerful approach, especially in modern applications such as text-to-image generation.
-
-Understanding these architectures provides a strong foundation for exploring more advanced topics in generative AI and computer vision.
+In conclusion, all the above models showcase how various techniques can be used to achieve the same objective. Of the three models, the diffusion model currently stands out as the best technique for image generation, especially in the recent development of text-to-image synthesis.
