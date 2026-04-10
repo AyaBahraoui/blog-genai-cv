@@ -48,7 +48,7 @@
 | Text-to-image synthesis | Generate images from text prompts | DALL·E, Stable Diffusion |
 
 
-![Generated Faces](images/im1.png)
+![Generated Faces](images/im3.png)
 ---
 
 ## Why Use Generative AI?
@@ -97,7 +97,7 @@ Over time:
 
 ### GAN Architecture
  
-![Generated Faces](images/im2.png)
+![Generated Faces](images/im2.jpg)
 
 The architecture of a GAN is structured around the flow of data between the Generator and the Discriminator, forming a closed training loop. The process begins with a random noise vector sampled from a predefined distribution, which is then passed through the Generator to produce a synthetic image. This generated image, along with real images sampled from the training dataset, is fed into the Discriminator, which outputs a probability indicating whether each image is real or fake. The Generator and Discriminator are typically implemented as deep neural networks, often using convolutional layers for image data, and their interaction defines the overall behavior of the system. This architecture enables the model to iteratively refine its outputs through feedback from the Discriminator.
 
@@ -107,7 +107,7 @@ The architecture of a GAN is structured around the flow of data between the Gene
 
 The training process of a GAN involves an iterative sequence of steps in which both the Generator and Discriminator are updated alternately. First, a batch of random noise vectors is sampled and passed through the Generator to produce synthetic images. These generated samples are then combined with real images from the dataset and evaluated by the Discriminator, which assigns probabilities indicating their authenticity. Based on these predictions, loss functions are computed for both networks: the Discriminator is optimized to correctly classify real and fake images, while the Generator is optimized to produce images that can deceive the Discriminator. Through repeated application of backpropagation and gradient-based optimization, both networks gradually improve until reaching a point where the Discriminator can no longer confidently distinguish between real and generated data.
 
-![Generated Faces](images/im3.png)
+
 
 ---
 
